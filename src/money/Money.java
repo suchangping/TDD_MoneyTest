@@ -6,7 +6,7 @@ package money;
         this.amount = amount;
         this.currency = currency;
     }
-     Money times(int multiplier) {
+    Money times(int multiplier) {
          return new Money(amount * multiplier, currency);
      }
     String currency () {
