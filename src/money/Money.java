@@ -2,6 +2,7 @@ package money;
  class Money {
     protected  int amount;
     protected String currency;
+
     Money(int amount,String currency) {
         this.amount = amount;
         this.currency = currency;
@@ -9,7 +10,7 @@ package money;
     Money times(int multiplier) {
          return new Money(amount * multiplier, currency);
      }
-    String currency () {
+    String currency() {
         return currency;
     }
     public boolean equals(Object object) {
@@ -21,10 +22,10 @@ package money;
         return amount + " " + currency;
     }
     static Money dollar(int amount) {
-        return new Dollar(amount,"USD");
+        return new Money(amount,"USD");
     }
     static Money franc(int amount) {
-        return new Franc(amount,"CHF");
+        return new Money(amount,"CHF");
     }
 }
 
