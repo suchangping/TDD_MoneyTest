@@ -6,12 +6,13 @@ package money;
         this.amount = amount;
         this.currency = currency;
     }
-    Money times(int multiplier) {
+    Expression times(int multiplier) {
         return new Money(amount * multiplier, currency);
     }
-    Expression plus(Money addend) {
-        return new Sum(this, addend);
-    }
+     @Override
+     public Expression plus(Expression addend) {
+         return new Sum(this, addend);
+     }
     public Money reduce(Bank bank, String to) {
         int rate = bank.rate(currency, to);
         return new Money(amount/rate, to);
