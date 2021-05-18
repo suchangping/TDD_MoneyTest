@@ -6,7 +6,8 @@ package money;
         this.amount = amount;
         this.currency = currency;
     }
-    Expression times(int multiplier) {
+     @Override
+     public Expression times(int multiplier) {
         return new Money(amount * multiplier, currency);
     }
      @Override
