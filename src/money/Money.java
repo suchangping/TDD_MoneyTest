@@ -2,6 +2,7 @@ package money;
  class Money implements Expression {
     protected  int amount;
     protected String currency;
+
     Money(int amount,String currency) {
         this.amount = amount;
         this.currency = currency;
@@ -29,6 +30,7 @@ package money;
     public String toString() {
         return amount + " " + currency;
     }
+
     static Money dollar(int amount) {
         return new Money(amount,"USD");
     }
